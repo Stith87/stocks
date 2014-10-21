@@ -2,7 +2,8 @@
 require 'em-http'
 require 'em-http/middleware/oauth'
 require 'em-http/middleware/json_response'
-
+require 'yajl'
+require 'json'
 
 OAuthConfig = {
   :consumer_key     => 'GM0tpzbCD1Vy7sqTUhwlVEW9e5YuFky9guv7QmJ1',
@@ -11,13 +12,26 @@ OAuthConfig = {
   :access_token_secret => 'VjvgI7wRH330dhdko8cpwTc3tDiV2UwjwCvtxNsh'
 }
 
+$quotes = []
+
 EM.run do
   conn = EventMachine::HttpRequest.new('https://stream.tradeking.com/v1/market/quotes.json?symbols=HPQ')
   conn.use EventMachine::Middleware::OAuth, OAuthConfig
 
   http = conn.get
-  http.stream { |chunk| puts chunk}
+  http.stream do |chunk|
 
+    results = JSON.parse(chunk)
+
+    File.open("stocks.json","w") do |f|
+      f.print(results)
+    end
+
+    puts results['status']
+
+    
+
+  end
 
 
   

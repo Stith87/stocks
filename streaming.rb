@@ -23,11 +23,11 @@ EM.run do
 
     results = JSON.parse(chunk)
 
-    File.open("stocks.json","w") do |f|
-      f.print(results)
+    File.open("stocks.json","a+") do |f|
+      f.puts(results)
     end
 
-    puts results['status']
+    puts results
 
     
 
@@ -39,6 +39,5 @@ EM.run do
     EM.stop
   end
 
-  trap("INT")  { http.close; EM.stop }
-  trap("TERM") { http.close; EM.stop }
+
 end

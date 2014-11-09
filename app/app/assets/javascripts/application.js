@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require foundation
+//= require highstocks
+//= require highstocks/themes/dark-green
 //= require_tree .
+
+$(function() {
+  $(document).foundation();
+});

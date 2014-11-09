@@ -1,8 +1,17 @@
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>
+                function parse(str) {
+                    var y = str.substr(0,4),
+                        m = str.substr(5,2) - 1,
+                        d = str.substr(8,2);
+                    var D = new Date(y,m,d);
+                    return Date.parse(D)
+                }
+        </script>
 <script type="text/javascript">
 $(function () {
-    $.getJSON('<%= historical_path %>', function (data) {
+    $.getJSON('/api/AAPL', function (data) {
 
         // split the data set into ohlc and volume
         var ohlc = [],
@@ -20,20 +29,24 @@ $(function () {
             i = 0;
 
         for (i; i < dataLength; i += 1) {
+           
+
             ohlc.push([
-                data[i][0], // the date
-                data[i][1], // open
-                data[i][2], // high
-                data[i][3], // low
-                data[i][4] // close
+                parse(data[i][0]), // the date
+                parseFloat(data[i][1]), // open
+                parseFloat(data[i][2]), // high
+                parseFloat(data[i][3]), // low
+                parseFloat(data[i][4]) // close
             ]);
 
             volume.push([
-                data[i][0], // the date
-                data[i][5] // the volume
+                parse(data[i][0]), // the date
+                parseInt(data[i][5])// the volume
             ]);
-        }
 
+           
+        }
+        console.log(ohlc);
 
         // create the chart
         $('#container').highcharts('StockChart', {
@@ -73,7 +86,7 @@ $(function () {
 
             series: [{
                 type: 'candlestick',
-                name: 'AAPL',
+                name: '<%= @symbol %>',
                 data: ohlc,
                 dataGrouping: {
                     units: groupingUnits
@@ -86,9 +99,11 @@ $(function () {
                 dataGrouping: {
                     units: groupingUnits
                 }
-            }]
+            }],
+
         });
     });
 });
         </script>
-<div id="container" style="height: 400px; min-width: 310px"></div>
+      
+<div id="container" style="height:700px; min-width: 310px"></div>

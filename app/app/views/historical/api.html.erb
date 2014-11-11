@@ -106,10 +106,26 @@
         </script>
 
 <div id="container" style="height:700px; min-width: 310px"></div>
+<div id="ratios">
+    <h1 style="text-align: center;">Financial Data</h1>
+    <table id="balanceSheet">
+    </table>
+</div>
 <script>
 $(document).ready(function(){
     data = <%= raw(@stock.to_json) %>; 
     Graph(data);
 });
  
+</script>
+<script>
+    $(function () {
+         $.getJSON('/financials/<%= @symbol %>', function (data) {
+            console.log(data);
+            for(i=0; i < data.length;i++){
+                $('#balanceSheet').append("<tr><td>" + data[i].name + "</td><td> " + data[i].data[0][1] + "</td></tr>");
+            }
+        });
+
+    });
 </script>

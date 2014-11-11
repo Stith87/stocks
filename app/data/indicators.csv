@@ -1,0 +1,70 @@
+Indicator	Title	Available Durations	Statement	Description
+ACCOCI	Accumulated Other Comprehensive Income	ARQ,MRQ	Balance Sheet	A component of [EQUITY] representing the accumulated change in equity from transactions and other events and circumstances from non-owner sources, net of tax effect, at period end. Includes foreign currency translation items, certain pension adjustments, unrealized gains and losses on certain investments in debt and equity securities.
+ASSETS	Total Assets	ARQ,MRQ	Balance Sheet	Sum of the carrying amounts as of the balance sheet date of all assets that are recognized. Major components are [CASHNEQ], [INVESTMENTS], [GOODWILL], [INTANGIBLES], [PPENET], [TAXASSETS], [PREPEXP] and [RECEIVABLES].
+ASSETSC	Current Assets	ARQ,MRQ	Balance Sheet	The current portion of [ASSETS], reported if a company operates a classified balance sheet.
+ASSETSNC	Assets Non-Current	ARQ,MRQ	Balance Sheet	Amount of non-current assets, for companies that operate a classified balance sheet. Calculated as the different between Total Assets [ASSETS] and Current Assets [ASSETSC]
+CASHNEQ	Cash and Equivalents	ARQ,MRQ	Balance Sheet	A component of [ASSETS] representing the amount of currency on hand as well as demand deposits with banks or financial institutions.
+DEBT	Total Debt	ARQ,MRQ	Balance Sheet	A component of [LIABILITIES] representing the amount of debt owed, including capital lease obligations. Further segmented into [DEBTC] and [DEBTNC] if the company operates a classified balance sheet.
+EQUITY	Shareholders Equity	ARQ,MRQ	Balance Sheet	A principal component of the balance sheet, in addition to [LIABILITIES] and [ASSETS], that represents the total of all stockholders' equity (deficit) items, net of receivables from officers, directors, owners, and affiliates of the entity which are attributable to the parent.
+LIABILITIES	Total Liabilities	ARQ,MRQ	Balance Sheet	Sum of the carrying amounts as of the balance sheet date of all liabilities that are recognized. Principal components are [DEBT], [DEFERREDREVENUE], [PAYABLES] and [TAXLIABILITIES].
+LIABILITIESC	Current Liabilities	ARQ,MRQ	Balance Sheet	The current portion of [LIABILITIES], repored if the company operates a classified balance sheet.
+LIABILITIESNC	Liabilities Non-Current	ARQ,MRQ	Balance Sheet	The non-current portion of [LIABILITIES], reported if the company operates a classified balance sheet.
+CAPEX	Capital Expenditure	ARY,ARQ,ART,MRY,MRQ,MRT	Cash Flow	A component of [NCFI] representing the net cash outflow (inflow) associated with the acquisition & disposal of long-lived, physical & intangible assets that are used in the normal conduct of business to produce goods and services and are not intended for resale. Includes cash inflows/outflows to pay for construction of self-constructed assets & softtware.
+DEPAMOR	Depreciation, Amortization & Accretion	ARY,ARQ,ART,MRY,MRQ,MRT	Cash Flow	A component of operating cash flow representing the aggregate net amount of depreciation, amortization, and accretion recognized during an accounting period. As a non-cash item, the net amount is added back to net income when calculating cash provided by or used in operations using the indirect method.
+NCF	Net Cash Flow / Change in Cash & Cash Equivalents	ARY,ARQ,ART,MRY,MRQ,MRT	Cash Flow	Principal component of the cash flow statement representing the amount of increase (decrease) in cash and cash equivalents. Includes [NCFO], investing [NCFI] and financing [NCFF] for continuing and discontinued operations, and the effect of exchange rate changes on cash [NCFX].
+NCFF	Net Cash Flow from Financing	ARY,ARQ,ART,MRY,MRQ,MRT	Cash Flow	A component of [NCF] representing the amount of cash inflow (outflow) from financing activities, from continuing and discontinued operations. Principal components of financing cash flow are: issuance (purchase) of equity shares, issuance (repayment) of debt securities, and payment of dividends & other cash distributions.
+NCFI	Net Cash Flow from Investing	ARY,ARQ,ART,MRY,MRQ,MRT	Cash Flow	A component of [NCF] representing the amount of cash inflow (outflow) from investing activities, from continuing and discontinued operations. Principal components of investing cash flow are: capital (expenditure) disposal of equipment [CAPEX], business (acquisitions) disposition [NCFBUS] and investment (acquisition) disposal [NCFINV].
+NCFO	Net Cash Flow from Operations	ARY,ARQ,ART,MRY,MRQ,MRT	Cash Flow	A component of [NCF] representing the amount of cash inflow (outflow) from operating activities, from continuing and discontinued operations.
+NCFX	Effect of Exchange Rate Changes on Cash 	ARY,ARQ,ART,MRY,MRQ,MRT	Cash Flow	A component of Net Cash Flow [NCF] representing the amount of increase (decrease) from the effect of exchange rate changes on cash and cash equivalent balances held in foreign currencies.
+FILINGDATE	Filing Date to Report Period Mapping	Entity	Provides a table mapping the form 10 filing date used in the As Reported (AR) dimension and the report period used in Most-Recent Report (MR) dimension. Note that this is time-indexed to the filing date, with the report period as the value, and that the value is in the format YYYYMMDD with any trailing decimal points discarded. Note that companies frequently submit form 10s without financials and that these are captured in this table.	
+FILINGTYPE	Filing Date to Report Type Mapping	Entity	Provides a table mapping the filing date used in the As Reported (AR) dimension and the the report type of the source SEC filing. Due to restrictions on permitted value-types, the report types map to a numeric code as follows: 10-K (annual):101; 10-Q (quarterly):102; 8-K:81; and S-1:10. Note that: forms 8-K and S-1 are not presently supported but that the codes are included here for future compatibility; and, that companies frequently submit form 10s without financials and that these are captured in this table.	
+PRICE	Share Price (Adjusted Close)	Entity	The price per common share adjusted for stock splits but not adjusted for dividends, used in the computation of [PE1], [PS1], [DIVYIELD] and [SPS].	
+SHARESBAS	Shares (Basic)	Entity	The number of shares or other units outstanding of the entity's capital or common stock or other ownership interests, as stated on the cover of related periodic report (10-K/10-Q).	
+DPS	Dividends per Basic Common Share	ARY,ARQ,ART,MRY,MRQ,MRT	Income Statement	Aggregate dividends declared during the period for each split-adjusted share of common stock outstanding.
+EBIT	Earning Before Interest & Taxes (EBIT)	ARY,ARQ,ART,MRY,MRQ,MRT	Income Statement	Earnings Before Interest and Tax is calculated by adding [TAXEXP] and [INTEXP] back to [NETINC].
+EPS	Earnings per Basic Share	ARY,ARQ,ART,MRY,MRQ,MRT	Income Statement	The amount of [NETINC] for the period per each [SHARESWA].
+EPSDIL	Earnings per Diluted Share	ARY,ARQ,ART,MRY,MRQ,MRT	Income Statement	The amount of [NETINC] for the period per each [SHARESWADIL].
+INTEXP	Interest Expense	ARY,ARQ,ART,MRY,MRQ,MRT	Income Statement	Amount of the cost of borrowed funds accounted for as interest expense.
+NETINC	Net Income	ARY,ARQ,ART,MRY,MRQ,MRT	Income Statement	The portion of profit or loss for the period, net of income taxes, which is attributable to the parent. Typically differs from net income to common stockholders due to the deduction of prefererred share dividends.
+NETINCCMN	Net Income Common Stock	ARY,ARQ,ART,MRY,MRQ,MRT	Income Statement	The amount of net income (loss) for the period per each share of common stock or unit outstanding during the reporting period. Typically differs from [NETINC] to the parent entity due to the deduction of [PREFDIVIS].
+NETINCDIS	Net Income from Discontinued Operations	ARY,ARQ,ART,MRY,MRQ,MRT	Income Statement	Amount of income (loss) from a disposal group, net of income tax, reported as a separate component of income.
+PREFDIVIS	Preferred Dividends Income Statement Impact	ARY,ARQ,ART,MRY,MRQ,MRT	Income Statement	Income statement item reflecting dividend payments to preferred stockholders. Subtracted from Net Income to Parent [NETINC] to obtain Net Income to Common Stockholders [NETINCCMN].
+REVENUE	Revenues	ARY,ARQ,ART,MRY,MRQ,MRT	Income Statement	Amount of Revenue recognized from goods sold, services rendered, insurance premiums, or other activities that constitute an earning process. Includes, but is not limited to, investment and interest income. May include trading gain (loss).
+SHARESWA	Weighted Average Shares	ARY,ARQ,ART,MRY,MRQ,MRT	Income Statement	The average number of shares or units issued and outstanding that are used in calculating [EPS], determined based on the timing of issuance of shares or units in the period.
+SHARESWADIL	Weighted Average Shares Diluted	ARY,ARQ,ART,MRY,MRQ,MRT	Income Statement	The average number of shares or units issued and outstanding that are used in calculating [EPSDIL], determined based on the timing of issuance of shares or units in the period.
+TAXEXP	Income Tax Expense	ARY,ARQ,ART,MRY,MRQ,MRT	Income Statement	Amount of current income tax expense (benefit) and deferred income tax expense (benefit) pertaining to continuing operations.
+ASSETSAVG	Average Assets	ART,MRT	Metrics	Average asset value for period used in calculation of [ROE] and [ROA], derived from [ASSETS].
+ASSETTURNOVER	Asset Turnover	ART,MRT	Metrics	Asset turnover is a measure of a firms operating efficiency, calculated by dividing [REVENUE] by [ASSETSAVG]. Often a component of [DUPONTROE] analysis.
+BVPS	Book Value per Share	ARQ,MRQ	Metrics	Measures the ratio between [EQUITY] and [SHARESWA].
+CURRENTRATIO	Current Ratio	ARQ,MRQ	Metrics	The ratio between [ASSETSC] and [LIABILITIESC], for companies that operate a classified balance sheet.
+DE	Debt to Equity Ratio	ARQ,MRQ	Metrics	Measures the ratio between [LIABILITIES] and [EQUITY].
+DILUTIONRATIO	Share Dilution Ratio	ARY,ARQ,ART,MRY,MRQ,MRT	Metrics	Measures the ratio between [SHARESWADIL] and [SHARESWA].
+DIVYIELD	Dividend Yield	Metrics	Dividend Yield measures the ratio between a companies [DPS] and its [PRICE].	
+EBITDA	Earnings Before Interest, Taxes & Depreciation Amortization (EBITDA)	ARY,ARQ,ART,MRY,MRQ,MRT	Metrics	EBITDA is a non-GAAP accounting metric that is widely used when assessing the performance of companies, calculated by adding [DEPAMOR] back to [EBIT].
+EBITDAMARGIN	EBITDA Margin	ART,MRT	Metrics	Measures the ratio between a companies [EBITDA] and [REVENUE].
+EBT	Earnings before Tax	ARY,ARQ,ART,MRY,MRQ,MRT	Metrics	Earnings Before Tax  is calculated by adding [TAXEXP] back to [NETINC].
+EPSDILGROWTH1YR	EPS Diluted Growth	ART,MRT	Metrics	Measures the growth in [EPSDIL] over the specified period.
+EPSGROWTH1YR	EPS Growth	ART,MRT	Metrics	Measures the growth in [EPS] over the specified period.
+EQUITYAVG	Average Equity	ART,MRT	Metrics	Average equity value for period used in calculation of [ROE], derived from [EQUITY].
+FCF	Free Cash Flow	ARY,ARQ,ART,MRY,MRQ,MRT	Metrics	Free Cash Flow is a measure of financial performance calculated as [NCFO] minus [CAPEXNET].
+FCFPS	Free Cash Flow per Share	ARY,ARQ,ART,MRY,MRQ,MRT	Metrics	Free Cash Flow per Share is a valuation metric calculated by dividing [FCF] by [SHARESWA].
+INTERESTBURDEN	Financial Leverage	ART,MRT	Metrics	Interest burden is a component of [DUPONTROE] analysis calculated by dividing [EBT] by [EBIT] . This will be 1 for a company with no [INTEXP].
+LEVERAGERATIO	Leverage Ratio	ART,MRT	Metrics	Leverage Ratio is a measure of a firms financial leverage, calculated by dividing [ASSETSAVG] by [EQUITYAVG]. A component of [DUPONTROE] analysis.
+MARKETCAP	Market Capitalization	Metrics	Represents the product of [SHARESBAS] and [PRICE].	
+NCFOGROWTH1YR	NCFO Growth	ART,MRT	Metrics	Measures the growth in [NCFO] over the specified period.
+NETINCGROWTH1YR	Net Income Growth	ART,MRT	Metrics	Measures the growth in [NETINCCMN] over the specified period.
+NETMARGIN	Profit Margin	ART,MRT	Metrics	Measures the ratio between a companies [NETINCCMN] and [REVENUE].
+PAYOUTRATIO	Payout Ratio	ART,MRT	Metrics	The percentage of earnings paid as dividends to common stockholders. Calculated by dividing [DPS] by [EPS].
+PB	Price to Book Value	ARQ,MRQ	Metrics	Measures the ratio between [MARKETCAP] and [EQUITY].
+PE	Price Earnings	ART,MRT	Metrics	Measures the ratio between [MARKETCAP] and [NETINCCMN]
+PE1	Price to Earnings Ratio	ART,MRT	Metrics	An alternative to [PE] representing the ratio between [PRICE] and [EPS].
+PS	Price Sales Damodaran Method	ART,MRT	Metrics	Measures the ratio between a companies [MARKETCAP] and [REVENUE].
+PS1	Price to Sales Ratio	ART,MRT	Metrics	An alternative calculation method to [PS], that measures the ratio between a companies [PRICE] and it's [SPS].
+REVENUEGROWTH1YR	Revenue Growth	ART,MRT	Metrics	Measures the growth in [REVENUE] over the specified period.
+ROA	Return on Average Assets	ART,MRT	Metrics	Return on assets measures how profitable a company  is [NETINCCMN] relative to its total assets [ASSETSAVG].
+ROE	Return on Average Equity	ART,MRT	Metrics	Return on equity measures a corporation's profitability by calculating the amount of [NETINCCMN] returned as a percentage of [EQUITYAVG].
+ROS	Return on Sales	ART,MRT	Metrics	Return on Sales is a ratio to evaluate a company's operational efficiency, calculated by dividing [EBIT] by [REVENUE]. ROS is often a component of [DUPONTROE].
+SHARESWAGROWTH1YR	Weighted Average Share Growth	ART,MRT	Metrics	Measures the growth in [SHARESWA] over the specified period.
+SPS	Sales per Share	ART,MRT	Metrics	Sales per Share measures the ratio between [REVENUE] and [SHARESWA].
+TAXEFFICIENCY	Tax Efficiency	ART,MRT	Metrics	Tax Efficiency is a component of [DUPONTROE] analysis calculated by dividing [NETINC] by [EBT]. This will be 1 when a company does not pay income tax.
+WORKINGCAPITAL	Working Capital	ARQ,MRQ	Metrics	Working capital measures the difference between [ASSETSC] and [LIABILITIESC].

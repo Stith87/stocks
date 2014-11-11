@@ -13,31 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141019012556) do
 
-  create_table "historical", force: true do |t|
-    t.string  "symbol",    limit: 5
-    t.date    "date"
-    t.decimal "open",                precision: 2, scale: 0
-    t.decimal "high",                precision: 2, scale: 0
-    t.decimal "low",                 precision: 2, scale: 0
-    t.decimal "close",               precision: 2, scale: 0
-    t.integer "volume"
-    t.decimal "adj_close",           precision: 2, scale: 0
+  create_table "historicals", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
-
-
-
-  create_table "stock_data", force: true do |t|
-    t.decimal  "ask",                  precision: 2, scale: 0
-    t.integer  "asksz"
-    t.decimal  "bid",                  precision: 2, scale: 0
-    t.integer  "bidsz"
-    t.datetime "datetime"
-    t.string   "exch",      limit: 45
-    t.decimal  "last",                 precision: 3, scale: 0
-    t.string   "symbol",    limit: 5
-    t.string   "timestamp", limit: 45
-  end
-
-  add_index "stock_data", ["id"], name: "id_UNIQUE", unique: true
 
 end

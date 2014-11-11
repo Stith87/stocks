@@ -3,10 +3,14 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root :to => 'historical#connect'
+  root :to => 'historical#show'
 
   get "historical" => "historical#connect"
 
+  get "api/:symbol" => "historical#api", as: "symbol"
+  get "eps/:eps" => "historical#eps", as: "eps"
+  get "revgrowth/:revGrowth" => "historical#revGrowth", as: "revGrowth"
+  get 'financials/:financials' => "historical#financials", as: "financials"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

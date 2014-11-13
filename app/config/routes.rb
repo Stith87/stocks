@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   get "api/:symbol" => "historical#api", as: "symbol"
   get "eps/:eps" => "historical#eps", as: "eps"
   get "revgrowth/:revGrowth" => "historical#revGrowth", as: "revGrowth"
-  get 'financials/:financials' => "historical#financials", as: "financials"
+  get 'financials/balance/:balance' => "historical#balance", as: "balance"
+  get 'financials/income/:income' => "historical#income", as: "income"
+  get 'financials/cashflow/:cashflow' => "historical#cashflow", as: "cashflow"
+  get 'financials/metrics/:metrics' => "historical#metrics", as: "metrics"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

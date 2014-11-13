@@ -108,7 +108,18 @@
 <div id="container" style="height:700px; min-width: 310px"></div>
 <div id="ratios">
     <h1 style="text-align: center;">Financial Data</h1>
+    <table id="metrics">
+        <h2>Metrics</h2>
+
+    </table>
     <table id="balanceSheet">
+        <h2>Balance Sheet</h2>
+    </table>
+     <table id="incomeStatement">
+        <h2>Income Statement</h2>
+    </table>
+     <table id="cashflow">
+        <h2>Income Statement</h2>
     </table>
 </div>
 <script>
@@ -120,10 +131,30 @@ $(document).ready(function(){
 </script>
 <script>
     $(function () {
-         $.getJSON('/financials/<%= @symbol %>', function (data) {
+        $.getJSON('/financials/metrics/<%= @symbol %>', function (data) {
+            console.log(data);
+            for(i=0; i < data.length;i++){
+                $('#metrics').append("<tr><td>" + data[i].name + "</td><td> " + data[i].data[0][1] + "</td></tr>");
+            }
+        });
+         $.getJSON('/financials/balance/<%= @symbol %>', function (data) {
             console.log(data);
             for(i=0; i < data.length;i++){
                 $('#balanceSheet').append("<tr><td>" + data[i].name + "</td><td> " + data[i].data[0][1] + "</td></tr>");
+            }
+        });
+
+         $.getJSON('/financials/income/<%= @symbol %>', function (data) {
+            console.log(data);
+            for(i=0; i < data.length;i++){
+                $('#incomeStatement').append("<tr><td>" + data[i].name + "</td><td> " + data[i].data[0][1] + "</td></tr>");
+            }
+        });
+
+         $.getJSON('/financials/cashflow/<%= @symbol %>', function (data) {
+            console.log(data);
+            for(i=0; i < data.length;i++){
+                $('#cashflow').append("<tr><td>" + data[i].name + "</td><td> " + data[i].data[0][1] + "</td></tr>");
             }
         });
 

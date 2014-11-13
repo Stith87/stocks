@@ -1,0 +1,12 @@
+PAYOUTRATIO,Payout Ratio,"ART,MRT",Metrics,The percentage of earnings paid as dividends to common stockholders. Calculated by dividing [DPS] by [EPS].
+PE,Price Earnings,"ART,MRT",Metrics,Measures the ratio between [MARKETCAP] and [NETINCCMN]
+PE1,Price to Earnings Ratio,"ART,MRT",Metrics,An alternative to [PE] representing the ratio between [PRICE] and [EPS].
+PS,Price Sales Damodaran Method,"ART,MRT",Metrics,Measures the ratio between a companies [MARKETCAP] and [REVENUE].
+PS1,Price to Sales Ratio,"ART,MRT",Metrics,"An alternative calculation method to [PS], that measures the ratio between a companies [PRICE] and it's [SPS]."
+REVENUEGROWTH1YR,Revenue Growth,"ART,MRT",Metrics,Measures the growth in [REVENUE] over the specified period.
+ROA,Return on Average Assets,"ART,MRT",Metrics,Return on assets measures how profitable a company  is [NETINCCMN] relative to its total assets [ASSETSAVG].
+ROE,Return on Average Equity,"ART,MRT",Metrics,Return on equity measures a corporation's profitability by calculating the amount of [NETINCCMN] returned as a percentage of [EQUITYAVG].
+ROS,Return on Sales,"ART,MRT",Metrics,"Return on Sales is a ratio to evaluate a company's operational efficiency, calculated by dividing [EBIT] by [REVENUE]. ROS is often a component of [DUPONTROE]."
+SHARESWAGROWTH1YR,Weighted Average Share Growth,"ART,MRT",Metrics,Measures the growth in [SHARESWA] over the specified period.
+SPS,Sales per Share,"ART,MRT",Metrics,Sales per Share measures the ratio between [REVENUE] and [SHARESWA].
+TAXEFFICIENCY,Tax Efficiency,"ART,MRT",Metrics,Tax Efficiency is a component of [DUPONTROE] analysis calculated by dividing [NETINC] by [EBT]. This will be 1 when a company does not pay income tax.

@@ -44,9 +44,9 @@ class HistoricalController < ApplicationController
 			render :json => @revGrowth['data']
 	end
 
-	def financials
+	def balance
 		col_data = []
-		symbol = params[:financials]
+		symbol = params[:balance]
 		CSV.foreach('data/balancesheet.csv',:headers => true) do |row|
 
 		  col_data << row[0]
@@ -56,6 +56,66 @@ class HistoricalController < ApplicationController
 		data = []
 		col_data.each do |indicator|
 			@uri = URI("https://www.quandl.com/api/v1/datasets/SF1/" + symbol + "_"+ indicator + "_MRQ.json?trim_start=2014-01-01&auth_token=276dWhyBCrn2Za6_xVHV&sort_order=dsc")
+			@response = Net::HTTP.get_response(@uri)
+			data.push(JSON.parse(@response.body))
+		end
+		
+		render :json => data
+		
+	end
+
+	def income
+		col_data = []
+		symbol = params[:income]
+		CSV.foreach('data/income.csv',:headers => true) do |row|
+
+		  col_data << row[0]
+
+		end
+
+		data = []
+		col_data.each do |indicator|
+			@uri = URI("https://www.quandl.com/api/v1/datasets/SF1/" + symbol + "_"+ indicator + "_MRQ.json?trim_start=2014-01-01&auth_token=276dWhyBCrn2Za6_xVHV&sort_order=dsc")
+			@response = Net::HTTP.get_response(@uri)
+			data.push(JSON.parse(@response.body))
+		end
+		
+		render :json => data
+		
+	end
+
+	def cashflow
+		col_data = []
+		symbol = params[:cashflow]
+		CSV.foreach('data/cashflow.csv',:headers => true) do |row|
+
+		  col_data << row[0]
+
+		end
+
+		data = []
+		col_data.each do |indicator|
+			@uri = URI("https://www.quandl.com/api/v1/datasets/SF1/" + symbol + "_"+ indicator + "_MRQ.json?trim_start=2014-01-01&auth_token=276dWhyBCrn2Za6_xVHV&sort_order=dsc")
+			@response = Net::HTTP.get_response(@uri)
+			data.push(JSON.parse(@response.body))
+		end
+		
+		render :json => data
+		
+	end
+
+	def metrics
+		col_data = []
+		symbol = params[:metrics]
+		CSV.foreach('data/metrics.csv',:headers => true) do |row|
+
+		  col_data << row[0]
+
+		end
+
+		data = []
+		col_data.each do |indicator|
+			@uri = URI("https://www.quandl.com/api/v1/datasets/SF1/" + symbol + "_"+ indicator + "_ART.json?trim_start=2014-01-01&auth_token=276dWhyBCrn2Za6_xVHV&sort_order=dsc")
 			@response = Net::HTTP.get_response(@uri)
 			data.push(JSON.parse(@response.body))
 		end
